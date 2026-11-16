@@ -1,0 +1,288 @@
+/* src/styles/sazon-brand.css - Kit de Marca Oficial Sazón */
+:root {
+  --green11: #114622;
+  --green21: #215B33;
+  --green: #3D8E33;
+  --green7f: #7FBA00;
+  --green56: #569E8F;
+  --red: #D6121A;
+  --cafe-oscuro: #2A1605;
+  --gris-texto: #3F4040;
+  --marfil: #F4F4E8;
+  --marfil-2: #E9E8D7;
+  --blanco: #FFFFFF;
+  --amarillo: #F1C85C;
+  --naranja: #EA885C;
+  --cacao: #643B22;
+
+  /* Tema Día (Default) */
+  --bg-page: var(--marfil);
+  --bg-surface: var(--blanco);
+  --bg-card-featured: var(--green21);
+  --text-primary: var(--green11);
+  --text-secondary: var(--gris-texto);
+  --border-color: var(--marfil-2);
+  --pill-bg: #EBF3E6;
+  --pill-text: var(--green);
+  --footer-bg: var(--cacao);
+  --footer-text: var(--marfil);
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+/* Tema Noche */
+[data-theme='dark'] {
+  --bg-page: #14331D;
+  --bg-surface: #1A4025;
+  --bg-card-featured: #4E8B2B;
+  --text-primary: var(--blanco);
+  --text-secondary: #D4E2D7;
+  --border-color: #295636;
+  --pill-bg: #234E30;
+  --pill-text: var(--green7f);
+  --footer-bg: var(--marfil);
+  --footer-text: var(--cafe-oscuro);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background-color: var(--bg-page);
+  color: var(--text-secondary);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* CSS Components */
+.sazon-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-page);
+}
+
+.sazon-menu-btn {
+  background: none;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.sazon-brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--green21);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sazon-crumb {
+  display: inline-block;
+  background-color: var(--green21);
+  color: var(--blanco);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.85rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1.25rem;
+}
+
+[data-theme='dark'] .sazon-crumb {
+  background-color: var(--marfil);
+  color: var(--green11);
+}
+
+.sazon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.sazon-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sazon-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.sazon-card.featured {
+  background-color: var(--bg-card-featured);
+  border-color: transparent;
+  color: var(--blanco);
+}
+
+.sazon-card-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--pill-bg);
+  color: var(--pill-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sazon-card.featured .sazon-card-icon-box {
+  background-color: rgba(255, 255, 255, 0.16);
+  color: var(--blanco);
+}
+
+.sazon-pill {
+  background-color: var(--pill-bg);
+  color: var(--pill-text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.sazon-card.featured .sazon-pill {
+  background-color: rgba(255, 255, 255, 0.18);
+  color: var(--blanco);
+}
+
+.sazon-card-link {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--green);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+
+[data-theme='dark'] .sazon-card-link {
+  color: var(--green7f);
+}
+
+.sazon-card.featured .sazon-card-link {
+  color: var(--blanco);
+}
+
+.sazon-btn-primary {
+  background-color: var(--green7f);
+  color: var(--green11);
+  border: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.sazon-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(3px);
+  z-index: 40;
+}
+
+.sazon-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 265px;
+  background-color: var(--green);
+  color: var(--blanco);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 50;
+}
+
+.sazon-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 0.85rem;
+  border-radius: 8px;
+  color: var(--blanco);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  width: 100%;
+  margin-bottom: 0.2rem;
+}
+
+.sazon-nav-item:hover,
+.sazon-nav-item.active {
+  background-color: var(--green21);
+}
+
+.sazon-footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  padding: 1rem 2rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.sazon-theme-fab {
+  position: fixed;
+  bottom: 0.65rem;
+  right: 1.25rem;
+  background-color: var(--green7f);
+  color: var(--green11);
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1rem;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+}
+
+.sazon-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.88rem;
+}
+
+.sazon-table th,
+.sazon-table td {
+  padding: 0.85rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+}
